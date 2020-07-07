@@ -1,0 +1,14 @@
+server:
+  port: 7002
+eureka:
+  instance:
+    hostname: eureka7002.com  #eureka服务端的实例名称，集群的话需要配置本地host映射
+  client:
+    register-with-eureka: false  #不向注册中心注册自己
+    fetch-registry: false  #表示自己就是注册中心，不用去注册中心获取其他服务的地址
+    service-url: #其他eureka服务端地址，集群的话以逗号隔开
+      defaultZone: http://eureka7001.com:7001/eureka/
+  server:
+      enable-self-preservation: false #关闭eureka的自我保护机制
+      eviction-interval-timer-in-ms: 2000 #eureka服务在最后一次收到心跳后的等待时间，默认90s，现在2s
+

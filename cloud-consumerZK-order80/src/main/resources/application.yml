@@ -1,0 +1,8 @@
+server:
+  port: 80
+spring:
+  application:
+    name: cloud-consumerZK-payment80
+  cloud:
+    zookeeper:
+      connect-string: 192.168.190.128:2181 #zk服务地址
