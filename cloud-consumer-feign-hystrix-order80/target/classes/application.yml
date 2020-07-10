@@ -1,11 +1,13 @@
 server:
   port: 80
 
+
 eureka:
   client:
-    register-with-eureka: false
+    register-with-eureka: true #向eureka注册自己
+    fetch-registry: true #要不要去注册中心获取其他服务的地址
     service-url:
-      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7001.com:7001/eureka
 
 #设置feign客户端超时时间(OpenFeign默认支持ribbon)
 ribbon:
@@ -14,6 +16,6 @@ ribbon:
   #指的是建立连接后从服务器读取到可用资源所用的时间
   ConnectTimeout: 5000
 
-logging:
-  level:   # feign日志以什么级别监控哪个接口
-    com.alibaba.springcloud.services.PaymentFeignService: debug
+spring:
+  application:
+    name: OrderHystrix80

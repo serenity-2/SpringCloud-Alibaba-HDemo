@@ -21,7 +21,6 @@ public class PaymentController {
     @GetMapping("/payment/hystrix/ok/{id}")
     public String Payment_ok(@PathVariable("id") Integer id){
         String result = paymentService.paymentInfo_OK(id);
-        Long end=System.currentTimeMillis();
         log.info("*****result: "+result);
         return result;
     }
