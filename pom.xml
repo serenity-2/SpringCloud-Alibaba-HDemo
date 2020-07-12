@@ -23,6 +23,8 @@
       <module>cloud-consumer_consul-order80</module>
       <module>cloud-privider_consul-payment8006</module>
       <module>cloud-provider-hystrix-payment8001</module>
+      <module>cloud-consumer-hystrix-doshboard9001</module>
+      <module>cloud-gateway-gateway9527</module>
   </modules>
 
   <name>Maven</name>

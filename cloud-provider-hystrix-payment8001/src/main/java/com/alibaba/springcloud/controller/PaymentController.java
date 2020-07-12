@@ -19,7 +19,7 @@ public class PaymentController {
     private String serverPort;
 
     @GetMapping("/payment/hystrix/ok/{id}")
-    public String Payment_ok(@PathVariable("id") Integer id){
+    public String paymentInfo_ok(@PathVariable("id") Integer id){
         String result = paymentService.paymentInfo_OK(id);
         log.info("*****result: "+result);
         return result;
@@ -31,4 +31,13 @@ public class PaymentController {
         log.info("*****result: "+result);
         return result;
     }
+
+    //服务熔断
+    @GetMapping("/payment/hystyrix/circuit/{id}")
+    public String paymentCircuitBreaker(@PathVariable("id") Integer id){
+        String result=paymentService.paymentCircuitBreaker(id);
+        log.info("result:"+result);
+        return result;
+    }
+
 }
